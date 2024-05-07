@@ -1,4 +1,4 @@
-class Animal{
+dvdfbvsdfbm df d s svf fg ffg class Animal{
     String type;
     int age;
 
