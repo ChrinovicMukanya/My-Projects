@@ -19,9 +19,7 @@ public class Main
                 yGenotypeSequanceArray[x] = yAllele;
             }
         }
-  //      for (int x = 0; x < yGenotypeSequanceArray.length; x++){
-    //        System.out.println(yGenotypeSequanceArray[x]);
-      //  }
+        
       for(int x = 0; x < xGenetypeSequanceArray.length; x++){
         for(int y = 0; y < yGenotypeSequanceArray.length; y++){
             System.out.println(xGenetypeSequanceArray[x] + "" + yGenotypeSequanceArray[y]);
