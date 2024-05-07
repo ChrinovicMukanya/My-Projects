@@ -11,8 +11,6 @@ public class Main
                 xGenetypeSequanceArray[x] = xAllele;
             }
         }
-//for (int x = 0; x < xGenetypeSequanceArray.length; x++){
-  //          System.out.println(xGenetypeSequanceArray[x]);
         char yGenotypeSequance[] = yGenotype.toCharArray();
         char[] yGenotypeSequanceArray = new char[2]; 
 
