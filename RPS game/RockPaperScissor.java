@@ -6,7 +6,7 @@ public class RockPaperScissor
 {
     private static String generateRandomValue(String[] array){// Function generates random value in an array
         if (array == null || array.length == 0){
-            return null;
+            return null; //Checks if array contains any values
         }
         Random random = new Random();
         int randomIndex = random.nextInt(array.length); 
