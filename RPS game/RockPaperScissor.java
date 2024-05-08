@@ -9,11 +9,12 @@ public class RockPaperScissor
             return null;
         }
         Random random = new Random();
-        int randomIndex = random.nextInt(array.length);
+        int randomIndex = random.nextInt(array.length); 
         String randomValue = array[randomIndex];
 
         return randomValue;
     }
+    //Message if user won
     private static void userWon(){
         JOptionPane.showMessageDialog(null, "You Win!!!");
     }
