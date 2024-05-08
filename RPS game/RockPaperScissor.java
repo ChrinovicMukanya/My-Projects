@@ -18,6 +18,7 @@ public class RockPaperScissor
     private static void userWon(){
         JOptionPane.showMessageDialog(null, "You Win!!!");
     }
+    //Message if user loses
     private static void userLost(){
         JOptionPane.showMessageDialog(null, "You Loose, Computer wins!");
     }
