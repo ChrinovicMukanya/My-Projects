@@ -32,7 +32,7 @@ public class RockPaperScissor
         while (turnsPlayed < numberOfTurns){
 
             String[] gameOptions = {"Rock", "Paper","Scissor"};
-            String computerChoice = generateRandomValue(gameOptions);
+            String computerChoice = generateRandomValue(gameOptions);//Gets Random option from list
 
             System.out.println();
             String userChoice = JOptionPane.showInputDialog("Rock Paper or Scisssor");
