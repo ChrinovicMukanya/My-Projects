@@ -79,7 +79,7 @@ public class RockPaperScissor
             }
         }
         JOptionPane.showMessageDialog(null,"Game Over, Thanks for playing :)");
-        JOptionPane.showMessageDialog(null,score + "/5");    //Calculates total user 
+        JOptionPane.showMessageDialog(null,score + "/5");    //Calculates total user winning Score
         
     }
 }
