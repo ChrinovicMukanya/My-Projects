@@ -22,6 +22,7 @@ static void search_book( Book b_database[],int len, char * search_value, Book * 
 			break;
 	}
 }
+//This function "get_input" is not being implemented , but will be later
 int get_input(char str[], int n){
 	char _char;
 	int x;
