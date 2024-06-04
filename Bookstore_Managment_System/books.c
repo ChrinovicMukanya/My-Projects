@@ -44,7 +44,7 @@ int main(int argc, char * argv[])
 	Book b_database[] = {b1, b2, b3, b4, b5};
 	int len = sizeof(b_database) / sizeof(b_database[0]);
 
-	Book _book = {"Null", 0, 0};
+	Book _book = {"Null", 0, 0};//PlaceHolder Item
 
 	char * search_value = "Welcom";
 	search_book(b_database, len, search_value, &_book);
