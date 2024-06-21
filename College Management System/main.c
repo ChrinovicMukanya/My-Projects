@@ -49,7 +49,7 @@ void create_student(Student *new_student,char *nme,char *sur,char *crs, double c
 void search_student(Student s_database[], int len,  char * s_name){
 		int x;
 		for(x = 0; x < len; ++x){
-			if (s_name == s_database[x].name){
+			if (strcmp(s_name ,s_database[x].name) == 0){
 				printf("Name    :\t%s\n", s_database[x].name);
 				printf("Surname :\t%s\n", s_database[x].surname);
 				printf("Course  :\t%s\n", s_database[x].course);
