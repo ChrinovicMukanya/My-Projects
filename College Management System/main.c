@@ -4,6 +4,7 @@
 #define IT_COURSE_FEE 72000.00
 #define BUSINESS_COURSE_FEE 65000.00
 #define STR_LEN 25
+
 typedef struct Student{
 	int student_id;
 	char * name;
@@ -12,9 +13,7 @@ typedef struct Student{
 	double current_fees;
 	double outstanding_fees; 
 }Student;
-//typedef Student_database{
-//	Student db_arr[1];
-//} Student_databse
+
 typedef Student * student_pointer;
 
 double disply_balance(Student student){
@@ -61,7 +60,7 @@ int main(int argc, char * argv[])
 {
 	Student student_db[5];
 	int len = sizeof(student_db) / sizeof(student_db[0]);
-	//Student_database s_db = {student_database};
+	
 	int st_num;
 	printf("How Many student do you want to add? \n");
 	scanf("%d", &st_num);
