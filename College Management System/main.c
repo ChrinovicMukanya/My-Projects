@@ -3,7 +3,7 @@
 #include <string.h>
 #define IT_COURSE_FEE 72000.00
 #define BUSINESS_COURSE_FEE 65000.00
-
+#define STR_LEN 25
 typedef struct Student{
 	int student_id;
 	char * name;
@@ -39,7 +39,7 @@ void update_fees(Student * student,char *course,double amount){
 		printf("Invalid course/n");
 }
 
-void create_student(Student *new_student,char *nme,char *sur,char *crs, double crf){
+void create_student(Student *new_student,char nme[],char sur[],char crs[], double crf){
 	 student_pointer s_ptr = new_student;
 	 s_ptr->name = nme;
 	 s_ptr->surname = sur;
@@ -68,15 +68,15 @@ int main(int argc, char * argv[])
 	
 	int x = 0;
 	while (x < st_num){
-		char * name;
+		char name[STR_LEN];
 		printf("Insert name : ");
 		scanf("%s", &name);
 
-		char * surname;
+		char surname[STR_LEN;
 		printf("Insert surname : ");
 		scanf("%s", &surname);
 
-		char * course;
+		char course[STR_LEN];
 		printf("Insert course : ");
 		scanf("%s", &course);
 	
