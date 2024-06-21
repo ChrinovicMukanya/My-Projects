@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #define IT_COURSE_FEE 72000.00
 #define BUSINESS_COURSE_FEE 65000.00
 
 typedef struct Student{
-	const int student_id;
+	int student_id;
 	char * name;
 	char * surname;
 	char * course;
@@ -24,12 +25,12 @@ void update_fees(Student * student,char *course,double amount){
 	student_pointer s_ptr = student;
 	s_ptr->current_fees =+ amount;
 
-	if (course == "information_Technology"){
+	if (strcmp(course,"information_Technology") == 0){
 		if (student->current_fees >= IT_COURSE_FEE){
 			s_ptr->outstanding_fees = 0;
 		}else
 			s_ptr->outstanding_fees = IT_COURSE_FEE - amount;
-	}else if (course == "business"){
+	}else if (strcmp(course,"business") == 0){
 		if (student->current_fees >= BUSINESS_COURSE_FEE){
 			s_ptr->outstanding_fees = 0;
 		}else
@@ -85,9 +86,9 @@ int main(int argc, char * argv[])
 		
 		double outstanding_fees;
 
-		if (course == "information_technology"){
+		if (strcmp(course ,"information_technology") == 0){
 			outstanding_fees = IT_COURSE_FEE - current_fees;
-		}else if (course == "business"){
+		}else if (strcmp(course, "business") == 0){
 			outstanding_fees = BUSINESS_COURSE_FEE - current_fees;
 		}
 
