@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #define _LEN 100
 
 typedef struct Book{
@@ -13,7 +15,7 @@ static void search_book( Book b_database[],int len, char * search_value, Book * 
 	Book * ptr = _book;
 	int x;
 	for ( x = 0; x < len; ++x){
-		if (b_database[x].name == search_value){
+		if (strcmp(b_database[x].name, search_value) == 0){
 			ptr->name = b_database[x].name;
 			ptr->book_id = b_database[x].book_id;
 			ptr->price = b_database[x].price;
@@ -22,17 +24,6 @@ static void search_book( Book b_database[],int len, char * search_value, Book * 
 			break;
 	}
 }
-//This function "get_input" is not being implemented , but will be later
-int get_input(char str[], int n){
-	char _char;
-	int x;
-	while ( _char = getchar() != '\n'){
-		if ( x < n){
-			str[x] = _char;
-		}	++x;
-	}str[x] = '\0';
-	return x;
-} 
 int main(int argc, char * argv[])
 {
 	Book b1 = {"Atoms", 121324, 100};
@@ -46,7 +37,7 @@ int main(int argc, char * argv[])
 
 	Book _book = {"Null", 0, 0};//PlaceHolder Item
 
-	char * search_value = "Welcom";
+	char * search_value = "Atoms";
 	search_book(b_database, len, search_value, &_book);
 
 	printf("name: %s\nId: %d\nprice: R%0.2f\n", _book.name, _book.book_id, _book.price); 
