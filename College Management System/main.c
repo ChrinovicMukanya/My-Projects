@@ -11,9 +11,9 @@ typedef struct Student{
 	double current_fees;
 	double outstanding_fees; 
 }Student;
-typedef Student_database{
-	Student db_arr[1];
-} Student_databse
+//typedef Student_database{
+//	Student db_arr[1];
+//} Student_databse
 typedef Student * student_pointer;
 
 double disply_balance(Student student){
@@ -58,9 +58,9 @@ void search_student(Student s_database[], int len,  char * s_name){
 }	
 int main(int argc, char * argv[])
 {
-	Student student_database[5];
-	int len = sizeof(student_database) / sizeof(student_database[0]);
-	Student_database s_db = {student_database};
+	Student student_db[5];
+	int len = sizeof(student_db) / sizeof(student_db[0]);
+	//Student_database s_db = {student_database};
 	int st_num;
 	printf("How Many student do you want to add? \n");
 	scanf("%d", &st_num);
@@ -93,8 +93,7 @@ int main(int argc, char * argv[])
 
 		Student n_student = {1391374, NULL, NULL, NULL};
 		create_student(&n_student, name, surname , course , current_fees);
-		Student_databse * s_ptr;
-		s_ptr->s_arr[x] = n_student;
+		student_db[x] = n_student;
 		x++;
 	}
 }
