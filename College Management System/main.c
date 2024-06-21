@@ -11,7 +11,9 @@ typedef struct Student{
 	double current_fees;
 	double outstanding_fees; 
 }Student;
-
+typedef Student_database{
+	Student db_arr[1];
+} Student_databse
 typedef Student * student_pointer;
 
 double disply_balance(Student student){
