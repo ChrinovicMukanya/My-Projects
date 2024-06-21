@@ -60,7 +60,7 @@ int main(int argc, char * argv[])
 {
 	Student student_database[5];
 	int len = sizeof(student_database) / sizeof(student_database[0]);
-	
+	Student_database s_db = {student_database};
 	int st_num;
 	printf("How Many student do you want to add? \n");
 	scanf("%d", &st_num);
@@ -93,8 +93,8 @@ int main(int argc, char * argv[])
 
 		Student n_student = {1391374, NULL, NULL, NULL};
 		create_student(&n_student, name, surname , course , current_fees);
-		student_pointer s_ptr = student_database[x];
-		s_ptr = n_student;
+		Student_databse * s_ptr;
+		s_ptr->s_arr[x] = n_student;
 		x++;
 	}
 }
