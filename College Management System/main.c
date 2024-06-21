@@ -25,7 +25,7 @@ void update_fees(Student * student,char *course,double amount){
 	student_pointer s_ptr = student;
 	s_ptr->current_fees =+ amount;
 
-	if (strcmp(course,"information_Technology") == 0){
+	if (strcmp(course,"IT") == 0){
 		if (student->current_fees >= IT_COURSE_FEE){
 			s_ptr->outstanding_fees = 0;
 		}else
