@@ -4,7 +4,7 @@
 #define _LEN 100
 
 typedef struct Book{
-	char * name;
+	char name[LEN];
 	unsigned int book_id;
 	double price;
 }	Book;
