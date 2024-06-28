@@ -69,15 +69,17 @@ int main(int argc, char * argv[])
 	while (x < st_num){
 		char name[STR_LEN];
 		printf("Insert name : ");
-		scanf("%s", &name);
+		fgets(name, STR_LEN, stdin);
+	
 
 		char surname[STR_LEN;
 		printf("Insert surname : ");
-		scanf("%s", &surname);
+		fgets(surname, STR_LEN, stdin);
+	
 
 		char course[STR_LEN];
 		printf("Insert course : ");
-		scanf("%s", &course);
+		fgets(course, STR_LEN, stdin);
 	
 		double current_fees;
 		printf("Insert fees paid :");
