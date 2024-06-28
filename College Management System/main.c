@@ -54,7 +54,7 @@ void search_student(Student s_db[], int len,  char * s_info){
 				printf("Course  :\t%s\n", s_db[x].course);
 				printf("fees paid : %d\n", s_db[x].current_fees);
 			}
-		}
+		}printf("No Student Record\n");
 }	
 int main(int argc, char * argv[])
 {
