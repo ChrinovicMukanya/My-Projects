@@ -45,10 +45,10 @@ void create_student(Student *new_student,char nme[],char sur[],char crs[], doubl
 	 s_ptr->course = crs;
 	 s_ptr->current_fees = crf;
 }
-void search_student(Student s_database[], int len,  char * s_name){
+void search_student(Student s_db[], int len,  char * s_info){
 		int x;
 		for(x = 0; x < len; ++x){
-			if (strcmp(s_name ,s_database[x].name) == 0){
+			if (strcmp(s_name ,s_db[x].name) == 0 || strcmp(s_info , s_db[x].surname) == 0){
 				printf("Name    :\t%s\n", s_database[x].name);
 				printf("Surname :\t%s\n", s_database[x].surname);
 				printf("Course  :\t%s\n", s_database[x].course);
