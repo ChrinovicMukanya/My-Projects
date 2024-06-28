@@ -49,10 +49,10 @@ void search_student(Student s_db[], int len,  char * s_info){
 		int x;
 		for(x = 0; x < len; ++x){
 			if (strcmp(s_name ,s_db[x].name) == 0 || strcmp(s_info , s_db[x].surname) == 0){
-				printf("Name    :\t%s\n", s_database[x].name);
-				printf("Surname :\t%s\n", s_database[x].surname);
-				printf("Course  :\t%s\n", s_database[x].course);
-				printf("fees paid : %d\n", s_database[x].current_fees);
+				printf("Name    :\t%s\n", s_db[x].name);
+				printf("Surname :\t%s\n", s_db[x].surname);
+				printf("Course  :\t%s\n", s_db[x].course);
+				printf("fees paid : %d\n", s_db[x].current_fees);
 			}
 		}
 }	
