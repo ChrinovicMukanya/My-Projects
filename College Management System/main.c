@@ -5,6 +5,9 @@
 #define BUSINESS_COURSE_FEE 65000.00
 #define STR_LEN 25
 
+const char * _IT = "IT";
+const char * _Business = "Business";
+
 typedef struct Student{
 	int student_id;
 	char * name;
@@ -24,12 +27,12 @@ void update_fees(Student * student,char *course,double amount){
 	student_pointer s_ptr = student;
 	s_ptr->current_fees =+ amount;
 
-	if (strcmp(course,"IT") == 0){
+	if (strcmp(course, _IT) == 0){
 		if (student->current_fees >= IT_COURSE_FEE){
 			s_ptr->outstanding_fees = 0;
 		}else
 			s_ptr->outstanding_fees = IT_COURSE_FEE - amount;
-	}else if (strcmp(course,"business") == 0){
+	}else if (strcmp(course, _Business) == 0){
 		if (student->current_fees >= BUSINESS_COURSE_FEE){
 			s_ptr->outstanding_fees = 0;
 		}else
@@ -87,9 +90,9 @@ int main(int argc, char * argv[])
 		
 		double outstanding_fees;
 
-		if (strcmp(course ,"information_technology") == 0){
+		if (strcmp(course , _IT) == 0){
 			outstanding_fees = IT_COURSE_FEE - current_fees;
-		}else if (strcmp(course, "business") == 0){
+		}else if (strcmp(course, _Business) == 0){
 			outstanding_fees = BUSINESS_COURSE_FEE - current_fees;
 		}
 
