@@ -61,7 +61,7 @@ void search_student(Student s_database[], int len,  char s_info[]){
 				printf("Course  :\t%s\n", s_database[x].course);
 				printf("fees paid : %0.2f\n", s_database[x].current_fees);
 			}
-		}printf("No Student Records");
+		}printf("No Student Records\n");
 }
 
 int main(int argc, char * argv[])
@@ -79,6 +79,7 @@ int main(int argc, char * argv[])
 		printf("Insert name : ");
 		fgets(name, STR_LEN, stdin);
 		printf("\n");
+		getchar();
 
 		char surname[STR_LEN];
 		printf("Insert surname : ");
