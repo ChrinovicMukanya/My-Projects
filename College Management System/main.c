@@ -43,6 +43,7 @@ void update_fees(Student * student,char *course,double amount){
 	}else
 		printf("Invalid course\n");
 }
+
 void create_student(Student *new_student,char nme[],char sur[],char crs[] ,double crf){
 	 student_pointer s_ptr = new_student;
 	 s_ptr->name = nme;
@@ -50,6 +51,7 @@ void create_student(Student *new_student,char nme[],char sur[],char crs[] ,doubl
 	 s_ptr->course = crs;
 	 s_ptr->current_fees = crf;
 }
+
 void search_student(Student s_database[], int len,  char s_info[]){
 		int x;
 		for(x = 0; x < len; ++x){
@@ -60,13 +62,12 @@ void search_student(Student s_database[], int len,  char s_info[]){
 				printf("fees paid : %0.2f\n", s_database[x].current_fees);
 			}
 		}printf("No Student Records");
-}	
+}
+
 int main(int argc, char * argv[])
 {
 	Student student_database[5];
         int len = sizeof(student_database) / sizeof(student_database[0]);
-
-//	Student_Database s_dbs = {student_database};
 	
 	int st_num;
 	printf("How Many student do you want to add? \n");
