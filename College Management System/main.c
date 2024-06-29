@@ -57,7 +57,7 @@ void search_student(Student s_database[], int len,  char s_info[]){
 				printf("Name    :\t%s\n", s_database[x].name);
 				printf("Surname :\t%s\n", s_database[x].surname);
 				printf("Course  :\t%s\n", s_database[x].course);
-				printf("fees paid : %d\n", s_database[x].current_fees);
+				printf("fees paid : %\n", s_database[x].current_fees);
 			}
 		}printf("No Student Records");
 }	
