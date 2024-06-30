@@ -46,9 +46,9 @@ void update_fees(Student * student,char *course,double amount){
 
 void create_student(Student *new_student,char nme[],char sur[],char crs[] ,double crf){
 	 student_pointer s_ptr = new_student;
-	 s_ptr->name = nme;
-	 s_ptr->surname = sur;
-	 s_ptr->course = crs;
+	 strncmp(s_ptr->name,nme);
+	 strncmp(s_ptr->surname, sur);
+	 strncmp(s_ptr->course, crs);
 	 s_ptr->current_fees = crf;
 }
 
