@@ -5,15 +5,14 @@
 #define BUSINESS_COURSE_FEE 65000.00
 #define STR_LEN 250
 
-
 const char * _IT = "IT";
 const char * _Business = "Business";
 
 typedef struct Student{
 	long int student_id;
-	char * name;
-	char * surname;
-	char * course;
+	char name[STR_LEN + 1];
+	char surname[STR_LEN + 1];
+	char course[STR_LEN + 1];
 	double current_fees;
 	double outstanding_fees; 
 }Student;
@@ -44,12 +43,12 @@ void update_fees(Student * student,char *course,double amount){
 		printf("Invalid course\n");
 }
 
-void create_student(Student *new_student,char nme[],char sur[],char crs[] ,double crf){
-	 student_pointer s_ptr = new_student;
-	 strncmp(s_ptr->name,nme);
-	 strncmp(s_ptr->surname, sur);
-	 strncmp(s_ptr->course, crs);
-	 s_ptr->current_fees = crf;
+void create_student(Student *new_student, char nme[],char sur[],char crs[] ,double crf){
+	student_pointer s_ptr = new_student;
+	strncpy(new_student->name, nme, 10);
+	strncpy(new_student->surname, sur, 10);
+	strncpy(new_student->course, crs, 10);
+	s_ptr->current_fees = crf;
 }
 
 void search_student(Student s_database[], int len,  char s_info[]){
@@ -75,11 +74,10 @@ int main(int argc, char * argv[])
 	
 	int x = 0;
 	while (x < st_num){
-		char  name[STR_LEN];
+		getchar();
+		char name[STR_LEN];
 		printf("Insert name : ");
 		fgets(name, STR_LEN, stdin);
-		printf("\n");
-		getchar();
 
 		char surname[STR_LEN];
 		printf("Insert surname : ");
@@ -90,7 +88,7 @@ int main(int argc, char * argv[])
 		fgets(course, STR_LEN, stdin);
 	
 		double current_fees;
-		printf("Insert fees paid :");
+		printf("Insert fees paid : ");
 		scanf("%s", &current_fees);
 		
 		double outstanding_fees;
@@ -102,7 +100,7 @@ int main(int argc, char * argv[])
 			outstanding_fees = BUSINESS_COURSE_FEE - current_fees;
 		}
 
-		Student n_student = {1391374, NULL, NULL, NULL};
+		Student n_student = {1391374, "NONE", "NONE","NONE",0.0};
 		create_student(&n_student, name, surname , course , current_fees);
 	
 		student_database[x] = n_student;
