@@ -45,9 +45,9 @@ void update_fees(Student * student,char *course,double amount){
 
 void create_student(Student *new_student, char nme[],char sur[],char crs[] ,double crf){
 	student_pointer s_ptr = new_student;
-	strncpy(new_student->name, nme, 10);
-	strncpy(new_student->surname, sur, 10);
-	strncpy(new_student->course, crs, 10);
+	strncpy(new_student->name, nme, sizeof(new_student->name -1));
+	strncpy(new_student->surname, sur, sizeof(new_student->surname -1));
+	strncpy(new_student->course, crs, sizeof(new_student->course -1));
 	s_ptr->current_fees = crf;
 }
 
