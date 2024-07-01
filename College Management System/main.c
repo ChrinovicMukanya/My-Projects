@@ -9,7 +9,7 @@ const char * _IT = "IT";
 const char * _Business = "Business";
 
 typedef struct Student{
-	long int student_id;
+	size_t student_id;
 	char name[STR_LEN + 1];
 	char surname[STR_LEN + 1];
 	char course[STR_LEN + 1];
