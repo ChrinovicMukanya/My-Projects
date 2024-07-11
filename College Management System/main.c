@@ -7,12 +7,11 @@
 
 const char * _IT = "IT";
 const char * _Business = "Business";
-
 typedef struct Student{
-	size_t student_id;
-	char name[STR_LEN + 1];
-	char surname[STR_LEN + 1];
-	char course[STR_LEN + 1];
+	long int student_id;
+	char * name;
+	char * surname;
+	char * course;
 	double current_fees;
 	double outstanding_fees; 
 }Student;
@@ -42,15 +41,13 @@ void update_fees(Student * student,char *course,double amount){
 	}else
 		printf("Invalid course\n");
 }
-
-void create_student(Student *new_student, char nme[],char sur[],char crs[] ,double crf){
-	student_pointer s_ptr = new_student;
-	strncpy(new_student->name, nme, sizeof(new_student->name -1));
-	strncpy(new_student->surname, sur, sizeof(new_student->surname -1));
-	strncpy(new_student->course, crs, sizeof(new_student->course -1));
-	s_ptr->current_fees = crf;
+void create_student(Student *new_student,char nme[],char sur[],char crs[] ,double crf){
+	 student_pointer s_ptr = new_student;
+	 s_ptr->name = nme;
+	 s_ptr->surname = sur;
+	 s_ptr->course = crs;
+	 s_ptr->current_fees = crf;
 }
-
 void search_student(Student s_database[], int len,  char s_info[]){
 		int x;
 		for(x = 0; x < len; ++x){
@@ -60,35 +57,48 @@ void search_student(Student s_database[], int len,  char s_info[]){
 				printf("Course  :\t%s\n", s_database[x].course);
 				printf("fees paid : %0.2f\n", s_database[x].current_fees);
 			}
-		}printf("No Student Records\n");
+		}printf("No Student Records");
 }
+void trim(char *str){
+    int len = strlen(str);
+    if(len > 0 && str[len -1] == '\n'){
+        str[len-1] = '\0';
+    }
 
+}
 int main(int argc, char * argv[])
 {
 	Student student_database[5];
         int len = sizeof(student_database) / sizeof(student_database[0]);
+
+//	Student_Database s_dbs = {student_database};
 	
 	int st_num;
 	printf("How Many student do you want to add? \n");
 	scanf("%d", &st_num);
 	
 	int x = 0;
+
 	while (x < st_num){
-		getchar();
-		char name[STR_LEN];
+    getchar();
+		char  name[STR_LEN];
 		printf("Insert name : ");
 		fgets(name, STR_LEN, stdin);
+    trim(name);
+		printf("\n");
 
 		char surname[STR_LEN];
 		printf("Insert surname : ");
 		fgets(surname, STR_LEN, stdin);
+    trim(surname);
 
 		char course[STR_LEN];
 		printf("Insert course (IT/Business) : ");
 		fgets(course, STR_LEN, stdin);
+    trim(course);
 	
 		double current_fees;
-		printf("Insert fees paid : ");
+		printf("Insert fees paid :");
 		scanf("%s", &current_fees);
 		
 		double outstanding_fees;
@@ -100,7 +110,7 @@ int main(int argc, char * argv[])
 			outstanding_fees = BUSINESS_COURSE_FEE - current_fees;
 		}
 
-		Student n_student = {1391374, "NONE", "NONE","NONE",0.0};
+		Student n_student = {1391374, NULL, NULL, NULL};
 		create_student(&n_student, name, surname , course , current_fees);
 	
 		student_database[x] = n_student;
