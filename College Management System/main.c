@@ -80,22 +80,22 @@ int main(int argc, char * argv[])
 	int x = 0;
 
 	while (x < st_num){
-    getchar();
+    		getchar();
 		char  name[STR_LEN];
 		printf("Insert name : ");
 		fgets(name, STR_LEN, stdin);
-    trim(name);
+    		trim(name);
 		printf("\n");
 
 		char surname[STR_LEN];
 		printf("Insert surname : ");
 		fgets(surname, STR_LEN, stdin);
-    trim(surname);
+    		trim(surname);
 
 		char course[STR_LEN];
 		printf("Insert course (IT/Business) : ");
 		fgets(course, STR_LEN, stdin);
-    trim(course);
+    		trim(course);
 	
 		double current_fees;
 		printf("Insert fees paid :");
