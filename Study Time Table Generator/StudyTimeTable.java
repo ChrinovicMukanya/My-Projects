@@ -35,7 +35,7 @@ public class StudyTimeTable
         for (int x = 0; x < subjects.size(); x++){
             for(int y = 0; y < subjectsList.length; y++){
                 subjectsList[y] = subjects.get(x);
-            }//This magnificent piece of code is written by CHRINOVIC MUKANYA and i'm PROUD
+            }
         }
         int numberOfSubjectsPerDay = 2;
         int subjectCounted = 0;
